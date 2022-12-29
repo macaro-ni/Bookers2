@@ -1,2 +1,35 @@
-<h1>Books#index</h1>
-<p>Find me in app/views/books/index.html.erb</p>
+<h2>User info</h2>
+
+<!--ユーザー画像-->
+<img src="#">
+
+<table>
+  <tr>
+    <th>name</th> <td><名前></td>
+  </tr>
+  <tr>
+    <th>introduction</th> <td><紹介文></td>
+  </tr>
+</table>
+
+<!--ユーザー編集ボタン-->
+
+
+<h2>New book</h2
+<%= form_with model: @book, url:'/books', method: :post do |f| %>
+<p>Title</p>
+ <%= f.text_field :title %>
+<p>Opinion</p>
+<%= f.text_area :body %>
+<%= f.submit 'Create Book' %>
+<% end %>
+
+<h2>Books</h2>
+<table>
+  <tr>
+    <th></th><th>Title</th><th>Opinion</th>
+  </tr>
+  <tr>
+    <td>bookのimg</td><td>本のタイトル</td><td>感想</td>
+  </tr>
+</table>
