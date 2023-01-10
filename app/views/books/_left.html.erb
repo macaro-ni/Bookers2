@@ -5,17 +5,19 @@
 
   <!--ユーザー画像-->
   <img src="#">
-
+  <%= f.file_field :image, accept: "image/*" %>
   <table class="table">
+<!--名前と説明-->
     <tbody>
       <tr>
-        <th>name</th> <td></td>
+        <th>name</th> <td> book.user.name </td>
       </tr>
       <tr>
-        <th>introduction</th> <td><紹介文></td>
+        <th>introduction</th> <td> book.caption </td>
       </tr>
     </tbody>
   </table>
+
 
   <!--ユーザー編集ボタンが長い…-->
   <div class="row">
