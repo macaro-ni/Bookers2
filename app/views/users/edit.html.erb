@@ -5,28 +5,36 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto" >
+        <h2>User info</h2>
         <form>
+          <%= form_with model:@user do |f| %>
+
           <div class="form-group">
             <label for="user_name">Name</label>
-            <p>入力欄</p>
-            <input class="form-control name" type="text" value="aa" name="user[name]" id="user_name">
-          </div>
-          <div class="form-group">
-            <label for="user_image">Image</label>
-            <p>入力欄</p>
-            <input class="form-control-file user_image" accept="image/*" type="file" name="user[profile_image]" id="user_profile_image">
-          </div>
-          <div class="form-group">
-            <label for="user_introduction">Introduction</label>
-            <p>入力欄</p>
-            <textarea class="form-control introduction" name="user[introduction]" id="user_introduction"></textarea>
+            <br>
+            <%= f.text_field :name, autofocus:true,id:"inputName" %>
+            <!--<input class="form-control name" type="text" value="aa" name="user[name]" id="user_name">-->
           </div>
 
           <div class="form-group">
-            <!--%= f.submit 'Update User' ,class: "btn btn-secondary" %>
-            -->
-            <input type="submit" name="commit" value="Update User" class="btn btn-secondary" data-disable-with="Update User">
+            <label for="user_image">Image</label>
+            <br>
+            <%= f.file_field :profile_image,acceppt:"image/*" %>
+            <!--<input class="form-control-file user_image" accept="image/*" type="file" name="user[profile_image]" id="user_profile_image">-->
           </div>
+
+          <div class="form-group">
+            <label for="user_introduction">Introduction</label>
+            <br>
+            <%= f.text_area :introduction %>
+            <!--<textarea class="form-control introduction" name="user[introduction]" id="user_introduction"></textarea>-->
+          </div>
+
+          <div class="form-group">
+            <%= f.submit 'Update User' ,class: "btn btn-secondary" %>
+            <!--<type="submit" name="commit" value="Update User" class="btn btn-secondary" data-disable-with="Update User">-->
+          </div>
+          <% end %>
         </form>
       </div>
     </div>
