@@ -1,5 +1,9 @@
 <main>
 
+<div>
+    <%= flash[:notice] %>
+</div>
+
 <% if @book.errors.any? %>
     <h3><%= @book.errors.count %>errors prohibited this obj from being saved:</h3>
     <ul>
