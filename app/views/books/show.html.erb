@@ -12,17 +12,21 @@
         <tbody>
 
           <tr>
-            <td>ユーザーimg<!--% image_tag @user.get_image %-->
+            <td><%= image_tag @user.get_profile_image(100,100) %>
             <br>
-            ユーザー名usershowリンク付き</td>
+            <%= link_to user_path(@user.id) do %>
+              <%= @user.name %>
+            <%end %></td>
+
             <td><%= link_to book_path(@book.id) do %>
               <%= @book.title %>
               <% end %></td>
+
             <td><%= @book.body %></td>
 
             <% if @book.user == current_user %>
-            <td>editボタン
-                  <%= link_to edit_user_path(@user.id) do %>
+            <td>
+                  <%= link_to edit_book_path(@book.id) do %>
                   <button type="button" class="btn btn-success">Edit</button>
                   <% end %>
                   <!--<a class="btn btn-sm btn-success edit_book_55567" href="/books/55567/edit">Edit</a>--></td>

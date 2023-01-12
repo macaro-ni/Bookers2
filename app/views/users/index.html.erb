@@ -1,7 +1,7 @@
 <p id="natice"></p>
   <div class="coatainer px-5 px-sm-0">
   <div class="row">
-    <%= render 'books/left', books: @books,user: @user %>
+    <%= render 'books/left', books: @books,user: current_user %>
     <div class="col-md-8 offset-md-1">
       <h2>Users</h2>
       <table class="table">
@@ -13,10 +13,13 @@
           </tr>
         </thead>
         <tbody>
-          <!--繰り返しでユーザー表示-->
-          <td>画像</td>
-          <td>名前</td>
-          <td><a class="user_id" href="/users/73090">Show</a></td>
+          <% @users.each do |user| %>
+          <tr>
+            <td><%= image_tag user.get_profile_image(100,100) %></td>
+            <td><%= user.name %></td>
+            <td><%= link_to 'Show',user_path(user.id) %></td>
+          </tr>
+          <% end %>
         </tbody>
       </table>
     </div>
