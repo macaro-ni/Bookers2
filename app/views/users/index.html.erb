@@ -1,10 +1,36 @@
   <div>
     <%= flash[:notice] %>
   </div>
-  
+
   <div class="coatainer px-5 px-sm-0">
   <div class="row">
-    <%= render 'books/left',book: @book, books: @books,user: current_user %>
+
+      <div class="col-md-3">
+
+
+
+        <h2>User info</h2>
+
+
+
+          <%= image_tag current_user.get_profile_image(100,100) %>
+          <table class="table">
+
+            <tbody>
+              <tr>
+                <th>name</th> <td><%= current_user.name %></td>
+              </tr>
+              <tr>
+                <th>introduction</th> <td><%= current_user.introduction %> </td>
+              </tr>
+            </tbody>
+          </table>
+
+
+        <%= render 'books/left',book: @book, books: @books,user: current_user %>
+        </div>
+
+
     <div class="col-md-8 offset-md-1">
       <h2>Users</h2>
       <table class="table">
