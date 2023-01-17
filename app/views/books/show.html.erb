@@ -1,4 +1,4 @@
-<main>
+
 
   <div>
     <%= flash[:notice] %>
@@ -9,14 +9,14 @@
 
   <div class="col-md-3">
 
-    
-    
+
+
       <h2>User info</h2>
-    
-    
+
+
           <%= image_tag @user.get_profile_image(100,100) %>
         <table class="table">
-    
+
           <tbody>
             <tr>
               <th>name</th> <td><%= @user.name %></td>
@@ -26,12 +26,12 @@
             </tr>
           </tbody>
         </table>
-    
+
    <%= render 'left', book: @book_new,user: @user %>
  </div>
-</div>
 
 
+  <div class="col-md-8 offset-md-1">
       <h2>Book detail</h2>
       <table class="table">
         <tbody>
@@ -54,7 +54,7 @@
                   <%= link_to edit_book_path(@book.id) do %>
                   <button type="button" class="btn btn-success">Edit</button>
                   <% end %>
-                  <!--<a class="btn btn-sm btn-success edit_book_55567" href="/books/55567/edit">Edit</a>--></td>
+                  </td>
             <td>
                   <%= link_to book_path(@book),method: :delete,"data-confirm"=>"本当に消しますか？"  do %>
                   <button type="button" class="btn btn-danger">Destroy</button>
@@ -64,9 +64,8 @@
           </tr>
         </tbody>
       </table>
-
+    </div>
 
 
   </div>
 </div>
-</main>
